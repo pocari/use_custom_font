@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      theme: ThemeData(fontFamily: 'Raleway'),
       home: MyHomePage(),
     );
   }
@@ -19,8 +20,19 @@ class MyHomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text('use custom font'),
         ),
-        body: Center(
-          child: Text('hello, world'),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Center(
+              child: Text('Hello, world1(use default font)'),
+            ),
+            Center(
+              child: Text(
+                'Hello, world2-1(use specific font)',
+                style: TextStyle(fontFamily: 'RobotoMomo'),
+              ),
+            ),
+          ],
         ),
       );
 }
